@@ -5,6 +5,7 @@ import org.springframework.data.redis.core.StringRedisTemplate
 
 /**
  * A simple groovy engine to import a thesaurus into a Redis instance.
+ * @author Graham Polley | Shine Technologies | http://www.shinetech.com.au/
  */
 class ThesaurusImportEngine {
     @Autowired
@@ -37,6 +38,6 @@ class ThesaurusImportEngine {
 
     @Override
     String toString() {
-        return '$delimiter:$thesaurus'
+        return 'Thesaurus Import Engine: $delimiter:$thesaurus'
     }
 }

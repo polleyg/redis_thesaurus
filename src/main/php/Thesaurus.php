@@ -1,7 +1,8 @@
 <html>
 <head>
     <title>Thesaurus built with Redis</title>
-    <link rel="shortcut icon" href="http://images5.fanpop.com/image/photos/30800000/The-Big-Lebowski-the-big-lebowski-30869205-1600-1200.png">
+    <link rel="shortcut icon"
+          href="http://images5.fanpop.com/image/photos/30800000/The-Big-Lebowski-the-big-lebowski-30869205-1600-1200.png">
 </head>
 <body>
 

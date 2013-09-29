@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:redis-thesaurus-config.xml")
-public class SomeDummyTest {
+public class SimpleTest {
     @Autowired
     private ThesaurusImportEngine engine;
 
