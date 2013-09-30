@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Simple Thesaurus Built On Redis</title>
+    <link rel="shortcut icon"
+          href="http://www.unixstickers.com/image/cache/data/stickers/redis/redis.sh-600x600.png">
+</head>
+<body>
+
+<form id="frm">
+    Enter a word to search in Redis:<input type="text" id="root">
+    Sort Results:<input type="radio" name="sort" value="yes" checked="checked">Yes
+    <input type="radio" name="sort" value="no">No<br>
+    <input type="submit" value="Go!">
+</form>
+
+<div style="color:#229703" id="div1"/>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.js"></script>
+<script type="text/javascript">
+    $('#frm').submit(function () {
+        var start = new Date().getMilliseconds();
+        $.post('Thesaurus.php',
+                { root: $('#root').val(), sort: $("#frm input[type='radio']:checked").val()},
+                function (data) {
+                    var totalTime = (new Date().getMilliseconds()-start);
+                    $("#div1").html('<p>' + data + 'Time taken (ms): ' + totalTime + '</p>');
+                });
+        return false;
+    });
+</script>
+</body>
+</html>

@@ -1,20 +1,3 @@
-<html>
-<head>
-    <title>Thesaurus built with Redis</title>
-    <link rel="shortcut icon"
-          href="http://images5.fanpop.com/image/photos/30800000/The-Big-Lebowski-the-big-lebowski-30869205-1600-1200.png">
-</head>
-<body>
-
-<form action="Thesaurus.php" method="post">
-    Enter A Root Word: <input type="text" name="root" placeholder="enter root">
-    Sort Results: <input type="radio" name="sort" value="yes" checked="checked">Yes
-    <input type="radio" name="sort" value="no">No<br><br>
-    <input type="submit" value="Fetch Synonyms!">
-</form>
-
-</body>
-</html>
 <?php
 
 $root = $_POST["root"];
