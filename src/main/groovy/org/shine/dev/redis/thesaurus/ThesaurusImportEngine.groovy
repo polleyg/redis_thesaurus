@@ -14,18 +14,24 @@ class ThesaurusImportEngine {
     private String thesaurus
 
     /**
-     * Imports the configured thesaurus, flushing the old one before doing so
+     * Flushes Redis and imports the new thesaurus
      */
     void importThesaurus() {
+        println('Flushing Redis for new import of thesaurus..')
         redisTemplate.getConnectionFactory().getConnection().flushDb()
 
-        def rootWord, synonyms
+        def rootWord
 
-        new File(thesaurus).splitEachLine(delimiter) { fields ->
-            rootWord = fields.first()
-            synonyms = fields.subList(1, fields.size() - 1)
-            redisTemplate.opsForSet().add(rootWord, synonyms.toArray())
+        println('Processing thesaurus raw file and building Redis db..')
+        new File(thesaurus).eachLine { line ->
+            def split = line.split(delimiter)
+            if (split.last().isNumber()) {//indicates root word
+                rootWord = split.first()
+            } else {
+                redisTemplate.opsForSet().add(rootWord, line)
+            }
         }
+        println('Finished. Now go learn some new words!')
     }
 
     void setDelimiter(String delimiter) {

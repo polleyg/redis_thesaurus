@@ -24,7 +24,7 @@
 
     <bean id="thesaurusImportEngine"
           class="org.shine.dev.redis.thesaurus.ThesaurusImportEngine">
-        <property name="delimiter" value=","/>
-        <property name="thesaurus" value="src/main/resources/thesaurus.csv"/>
+        <property name="delimiter" value="\|"/>
+        <property name="thesaurus" value="src/main/resources/thesaurus_open_office.dat"/>
     </bean>
 </beans>
