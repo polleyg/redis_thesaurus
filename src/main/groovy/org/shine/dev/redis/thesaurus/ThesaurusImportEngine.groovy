@@ -1,5 +1,6 @@
 package org.shine.dev.redis.thesaurus
 
+import groovy.time.TimeCategory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.redis.core.StringRedisTemplate
 
@@ -17,21 +18,22 @@ class ThesaurusImportEngine {
      * Flushes Redis and imports the new thesaurus
      */
     void importThesaurus() {
+        def timeStart = new Date()
         println('Flushing Redis for new import of thesaurus..')
         redisTemplate.getConnectionFactory().getConnection().flushDb()
 
-        def rootWord
+        String rootWord
 
         println('Processing thesaurus raw file and building Redis db..')
-        new File(thesaurus).eachLine { line ->
-            def split = line.split(delimiter)
+        new File(thesaurus).splitEachLine(delimiter) { split ->
             if (split.last().isNumber()) {//indicates root word
                 rootWord = split.first()
             } else {
-                redisTemplate.opsForSet().add(rootWord, line)
+                redisTemplate.opsForSet().add(rootWord, split.toListString())
             }
         }
-        println('Finished. Now go learn some new words!')
+        println("Finished in ${TimeCategory.minus(new Date(), timeStart)}")
+        println('Now go learn some new words!')
     }
 
     void setDelimiter(String delimiter) {
