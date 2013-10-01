@@ -32,8 +32,7 @@ class ThesaurusImportEngine {
                 redisTemplate.opsForSet().add(rootWord, split.toListString())
             }
         }
-        println("Finished in ${TimeCategory.minus(new Date(), timeStart)}")
-        println('Now go learn some new words!')
+        println("Finished in ${TimeCategory.minus(new Date(), timeStart)}. Now go learn some new words!")
     }
 
     void setDelimiter(String delimiter) {
