@@ -1,6 +1,6 @@
-###################################################################
-##Graham Polley | Shine Technologies | http://www.shinetech.com.au/
-###################################################################
+####################################################################
+## Graham Polley | Shine Technologies | http://www.shinetech.com.au/
+####################################################################
 
 A very simple thesaurus app showing the usage of Redis, Spring Redis Data, Groovy, Java, Gradle and PHP.
 
