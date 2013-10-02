@@ -1,3 +1,20 @@
-# @author Graham Polley | Shine Technologies | http://www.shinetech.com.au/
+###################################################################
+##Graham Polley | Shine Technologies | http://www.shinetech.com.au/
+###################################################################
 
 A very simple thesaurus app showing the usage of Redis, Spring Redis Data, Groovy, Java, Gradle and PHP.
+
+What do I need to run this app locally on my machine?
+
+-Redis
+    http://redis.io/
+-Java JDK
+    http://www.oracle.com/technetwork/java/javase/downloads/index.html
+    http://openjdk.java.net/
+-Gradle/Groovy
+    http://www.gradle.org/
+-Apache/PHP
+    http://www.howtogeek.com/howto/ubuntu/installing-php5-and-apache-on-ubuntu/
+-PHPRedis
+    https://github.com/nicolasff/phpredis
+    http://ricochen.wordpress.com/2012/03/25/install-phpredis-on-ubuntu/
